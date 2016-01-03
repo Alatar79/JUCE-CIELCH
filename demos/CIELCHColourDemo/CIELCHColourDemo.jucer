@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="TjJSRO" name="CIELCHColourDemo" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.CIELCHColourDemo" includeBinaryInAppConfig="1"
+              jucerVersion="4.1.0">
+  <MAINGROUP id="Yoz5ac" name="CIELCHColourDemo">
+    <GROUP id="{C76526E7-1526-C7CE-2535-7A0973A6EA8A}" name="Data">
+      <FILE id="uJ6BlT" name="juce-logo_128x128.png" compile="0" resource="1"
+            file="juce-logo_128x128.png"/>
+    </GROUP>
+    <GROUP id="{7654203E-CA3D-2F32-8712-CC0DB063154C}" name="Source">
+      <FILE id="L2bIXf" name="BlendingComponent.cpp" compile="1" resource="0"
+            file="Source/BlendingComponent.cpp"/>
+      <FILE id="F3rAO6" name="BlendingComponent.h" compile="0" resource="0"
+            file="Source/BlendingComponent.h"/>
+      <FILE id="pFCJ2b" name="CIELCHColour.cpp" compile="1" resource="0"
+            file="../../module/CIELCHColour.cpp"/>
+      <FILE id="odMsj5" name="CIELCHColour.h" compile="0" resource="0" file="../../module/CIELCHColour.h"/>
+      <FILE id="w3pCFS" name="ColourDemoComponent.cpp" compile="1" resource="0"
+            file="Source/ColourDemoComponent.cpp"/>
+      <FILE id="uygdF3" name="ColourDemoComponent.h" compile="0" resource="0"
+            file="Source/ColourDemoComponent.h"/>
+      <FILE id="CJYSkq" name="DesaturationComponent.cpp" compile="1" resource="0"
+            file="Source/DesaturationComponent.cpp"/>
+      <FILE id="Weif1N" name="DesaturationComponent.h" compile="0" resource="0"
+            file="Source/DesaturationComponent.h"/>
+      <FILE id="pOCQw2" name="GeometryComponent.cpp" compile="1" resource="0"
+            file="Source/GeometryComponent.cpp"/>
+      <FILE id="lkUEkn" name="GeometryComponent.h" compile="0" resource="0"
+            file="Source/GeometryComponent.h"/>
+      <FILE id="SoEmGz" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="1" optimisation="1" targetName="CIELCHColourDemo"/>
+        <CONFIGURATION name="Release" osxSDK="default" osxCompatibility="default" osxArchitecture="default"
+                       isDebug="0" optimisation="3" targetName="CIELCHColourDemo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_video" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_opengl" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\..\JUCE\modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+    <VS2015 targetFolder="Builds/VisualStudio2015">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="CIELCHColourDemo"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="CIELCHColourDemo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_video" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_opengl" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\..\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2015>
+    <VS2013 targetFolder="Builds/VisualStudio2013">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="CIELCHColourDemo"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="CIELCHColourDemo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_video" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_opengl" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\..\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2013>
+    <VS2012 targetFolder="Builds/VisualStudio2012">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="CIELCHColourDemo"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="CIELCHColourDemo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_video" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_opengl" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\..\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2012>
+    <VS2010 targetFolder="Builds/VisualStudio2010">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="CIELCHColourDemo"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="3" targetName="CIELCHColourDemo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_video" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_opengl" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\..\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2010>
+    <VS2008 targetFolder="Builds/VisualStudio2008">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" isDebug="1"
+                       optimisation="1" targetName="CIELCHColourDemo"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" isDebug="0"
+                       optimisation="3" targetName="CIELCHColourDemo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_video" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_opengl" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\..\JUCE\modules"/>
+      </MODULEPATHS>
+    </VS2008>
+    <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="1" optimisation="1"
+                       targetName="CIELCHColourDemo"/>
+        <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="3"
+                       targetName="CIELCHColourDemo"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_events" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_graphics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_data_structures" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_gui_extra" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_cryptography" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_video" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_opengl" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_basics" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_devices" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_formats" path="..\..\..\..\JUCE\modules"/>
+        <MODULEPATH id="juce_audio_processors" path="..\..\..\..\JUCE\modules"/>
+      </MODULEPATHS>
+    </LINUX_MAKE>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0"/>
+    <MODULE id="juce_video" showAllCode="1" useLocalCopy="0"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>
