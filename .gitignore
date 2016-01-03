@@ -34,4 +34,7 @@
 #Directories
 demos/CIELCHColourDemo/Builds
 demos/CIELCHColourDemo/JuceLibraryCode
+
+#Files
 demos/CIELCHColourDemo/Thumbs.db
+Thumbs.db
