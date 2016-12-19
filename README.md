@@ -1,5 +1,5 @@
 # Description
-A CIELCH colour space for the JUCE framework. 
+A CIELCH colour space for the JUCE framework (http://www.juce.com). 
 
 The CIE LCH colour space is a colour space, which reflects how humans perceive colours. LCH is an abbreviation for Lightness, Chroma and Hue. Picking and interpolating colours in the CIE LCH colour space gives more natural results, than if you would use a HSV/HSL colour space. You can read more on Wikipedia: https://en.wikipedia.org/wiki/Lab_color_space
 
