@@ -5,19 +5,19 @@ The CIE LCH colour space is a colour space, which reflects how humans perceive c
 
 I have subclassed the JUCE::Colour class and added functions, which support the CIE LCH colour space. The new class is called CIELCHColour.
 
-#Demo
+# Demo
 The repository comes with a demo project, which shows how to use the CIELCHColour class:
 https://github.com/Alatar79/JUCE-CIELCH/tree/master/demos/CIELCHColourDemo
 
 Here is a screenshot of the colour demo: https://github.com/Alatar79/JUCE-CIELCH/blob/master/Screenshot.png
 
-#Documentation
+# Documentation
 http://alatar79.github.io/CIELCH/Doc/html/classCIELCHColour.html
 
 #Prerequisites
 You need the JUCE framework in order to use the CIELCHColour class. JUCE is a C++ cross-platform framework for GUI and audio. Get it from here: http://www.juce.com
 
-#License
+# License
 The CIELCH Colour JUCE module is provided under the terms of The MIT License (MIT):
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
