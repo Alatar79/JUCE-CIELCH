@@ -14,7 +14,7 @@ Here is a screenshot of the colour demo: https://github.com/Alatar79/JUCE-CIELCH
 # Documentation
 http://alatar79.github.io/CIELCH/Doc/html/classCIELCHColour.html
 
-#Prerequisites
+# Prerequisites
 You need the JUCE framework in order to use the CIELCHColour class. JUCE is a C++ cross-platform framework for GUI and audio. Get it from here: http://www.juce.com
 
 # License
