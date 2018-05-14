@@ -34,79 +34,84 @@ SOFTWARE.
 #include "CIELCHColour.h"
 
 CIELCHColour::CIELCHColour() noexcept
-    :Colour()
 {
+    juceColour = std::make_unique<Colour>();
 }
 
 
 CIELCHColour::CIELCHColour(const Colour& colour) noexcept
-    : Colour(colour.getRed(), colour.getGreen(), colour.getBlue(), colour.getAlpha())
 {
+    juceColour = std::make_unique<Colour>(colour.getRed(), colour.getGreen(), colour.getBlue(), colour.getAlpha());
 }
 
 
 CIELCHColour::CIELCHColour(const CIELCHColour& other) noexcept
-    :Colour(other)
 {
+    juceColour = std::make_unique<Colour>(other.getJuceColour());
 }
 
 CIELCHColour::CIELCHColour(uint32 argb) noexcept
-    :Colour(argb)
 {
+    juceColour = std::make_unique<Colour>(argb);
 }
 
 CIELCHColour::CIELCHColour(uint8 red, uint8 green, uint8 blue) noexcept
-    :Colour(red, green, blue)
 {
+    juceColour = std::make_unique<Colour>(red, green, blue);
 }
 
 CIELCHColour::CIELCHColour(uint8 red, uint8 green, uint8 blue, uint8 alpha) noexcept
-    :Colour(red, green, blue, alpha)
 {
+    juceColour = std::make_unique<Colour>(red, green, blue, alpha);
 }
 
 CIELCHColour::CIELCHColour(uint8 red, uint8 green, uint8 blue, float alpha) noexcept
-    :Colour(red, green, blue, alpha)
 {
+    juceColour = std::make_unique<Colour>(red, green, blue, alpha);
 }
 
 CIELCHColour::CIELCHColour(float hue, float saturation, float brightness, uint8 alpha) noexcept
-    :Colour(hue, saturation, brightness, alpha)
 {
+    juceColour = std::make_unique<Colour>(hue, saturation, brightness, alpha);
 }
 
 CIELCHColour::CIELCHColour(float hue, float saturation, float brightness, float alpha) noexcept
-    :Colour(hue, saturation, brightness, alpha)
 {
+    juceColour = std::make_unique<Colour>(hue, saturation, brightness, alpha);
 }
 
 CIELCHColour::CIELCHColour(PixelARGB argb) noexcept
-    :Colour(argb)
 {
+    juceColour = std::make_unique<Colour>(argb);
 }
 
 CIELCHColour::CIELCHColour(PixelRGB rgb) noexcept
-    :Colour(rgb)
 {
+    juceColour = std::make_unique<Colour>(rgb);
 }
 
 CIELCHColour::CIELCHColour(PixelAlpha alpha) noexcept
-    :Colour(alpha)
 {
+    juceColour = std::make_unique<Colour>(alpha);
 }
 
 //==============================================================================
 CIELCHColour& CIELCHColour::operator= (const CIELCHColour& other) noexcept
 {
-    Colour::operator=(other);
+    juceColour = std::make_unique<Colour>(other.getJuceColour());
     return *this; 
 }
 
 CIELCHColour& CIELCHColour::operator= (const Colour& other) noexcept
 {
-    Colour::operator=(other);
+    juceColour = std::make_unique<Colour>(other);
     return *this;
 
+}
+
+Colour CIELCHColour::getJuceColour() const
+{
+    return *juceColour;
 }
 
 //==============================================================================
@@ -114,7 +119,7 @@ CIELCHColour CIELCHColour::fromCIELCH(float L, float C, float H, float alpha, bo
 {
     CIELCHColour colour;
     CIELCHtoRGB(L, C, H, colour, imaginary);
-    colour = colour.withAlpha(alpha);
+    colour = colour.getJuceColour().withAlpha(alpha);
     return colour; 
 }
 
@@ -149,42 +154,42 @@ CIELCHColour CIELCHColour::withCIELightness(float newLightness, bool& imaginary)
 {
     float L, C, H;
     this->getCIELCH(L, C, H);
-    return fromCIELCH(newLightness, C, H, this->getFloatAlpha(), imaginary);
+    return fromCIELCH(newLightness, C, H, this->getJuceColour().getFloatAlpha(), imaginary);
 }
 
 CIELCHColour CIELCHColour::withCIEChroma(float newChroma, bool& imaginary) const noexcept
 {
     float L, C, H;
     this->getCIELCH(L, C, H);
-    return fromCIELCH(L, newChroma, H, this->getFloatAlpha(), imaginary);
+    return fromCIELCH(L, newChroma, H, this->getJuceColour().getFloatAlpha(), imaginary);
 }
 
 CIELCHColour CIELCHColour::withCIEHue(float newHue, bool& imaginary) const noexcept
 {
     float L, C, H;
     this->getCIELCH(L, C, H);
-    return fromCIELCH(L, C, newHue, this->getFloatAlpha(), imaginary);
+    return fromCIELCH(L, C, newHue, this->getJuceColour().getFloatAlpha(), imaginary);
 }
 
 CIELCHColour CIELCHColour::withMultipliedCIELightness(float multiplier, bool& imaginary) const noexcept
 {
     float L, C, H;
     this->getCIELCH(L, C, H);
-    return fromCIELCH(L * multiplier, C, H, this->getFloatAlpha(), imaginary);
+    return fromCIELCH(L * multiplier, C, H, this->getJuceColour().getFloatAlpha(), imaginary);
 }
 
 CIELCHColour CIELCHColour::withMultipliedCIEChroma(float multiplier, bool& imaginary) const noexcept
 {
     float L, C, H;
     this->getCIELCH(L, C, H);
-    return fromCIELCH(L, C * multiplier, H, this->getFloatAlpha(), imaginary);
+    return fromCIELCH(L, C * multiplier, H, this->getJuceColour().getFloatAlpha(), imaginary);
 }
 
 CIELCHColour CIELCHColour::withRotatedCIEHue(float amountToRotate, bool& imaginary) const noexcept
 {
     float L, C, H;
     this->getCIELCH(L, C, H);
-    return fromCIELCH(L, C, H + amountToRotate, this->getFloatAlpha(), imaginary);
+    return fromCIELCH(L, C, H + amountToRotate, this->getJuceColour().getFloatAlpha(), imaginary);
 }
 
 //==============================================================================
@@ -213,9 +218,9 @@ float CIELCHColour::invGammaCorrection(float g) noexcept
 
 void CIELCHColour::RGBtoXYZ(CIELCHColour c, float& X, float&Y, float& Z) noexcept
 {
-    float R = c.getFloatRed();
-    float G = c.getFloatGreen();
-    float B = c.getFloatBlue();
+    float R = c.getJuceColour().getFloatRed();
+    float G = c.getJuceColour().getFloatGreen();
+    float B = c.getJuceColour().getFloatBlue();
 
     R = invGammaCorrection(R) * 100.0f;
     G = invGammaCorrection(G) * 100.0f;

@@ -106,12 +106,13 @@ void DesaturationComponent::drawImages(Graphics& g, int  startx, int starty)
             bool imaginary;
 
             CIELCHColour CIEdesaturation = c.withMultipliedCIEChroma((float)chromaSlider.getValue(), imaginary);
-            g.setColour(CIEdesaturation);
-            g.setPixel(startx2 + border + x, starty + border + y);
+            g.setColour(CIEdesaturation.getJuceColour());
+            //g.setPixel(startx2 + border + x, starty + border + y);
+            g.drawRect(startx2 + border + x, starty + border + y, 1, 1);
 
-            CIELCHColour HSVdesaturation = c.withMultipliedSaturation((float)saturationSlider.getValue());
+            Colour HSVdesaturation = c.getJuceColour().withMultipliedSaturation((float)saturationSlider.getValue());
             g.setColour(HSVdesaturation);
-            g.setPixel(startx3 + border + x, starty + border + y);
+            g.drawRect(startx3 + border + x, starty + border + y, 1, 1);
 
         }
     }

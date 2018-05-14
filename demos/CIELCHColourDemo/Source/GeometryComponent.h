@@ -40,7 +40,7 @@ SOFTWARE.
 
 class GeometryComponent : public Component,
                           public Slider::Listener,
-                          public ComboBoxListener
+                          public ComboBox::Listener
 {
 public:
 

@@ -35,6 +35,7 @@ SOFTWARE.
 #define CIELCHColour_H_INCLUDED
 
 #include "../JuceLibraryCode/JuceHeader.h"
+#include <memory.h>
 
 //==============================================================================
 /**
@@ -71,7 +72,7 @@ CIELCHColour newColour2 = Colours::yellow;
 @endcode
 
 */
-class CIELCHColour : public Colour
+class CIELCHColour
 {
 public:
 
@@ -161,6 +162,10 @@ public:
     CIELCHColour& operator= (const Colour& other) noexcept;
 
     //==============================================================================
+
+    /** get the base JUCE colour, which this object works with */
+    Colour getJuceColour() const; 
+
     /** Create the colour from the CIE LCH colour space.
     The CIE LCH colour space is a colour space, which corresponds to
     the way humans perceive colours. It uses the components Lightness,
@@ -393,6 +398,8 @@ private:
 
     static float f(float t) noexcept;
     static float fInverse(float t) noexcept;
+
+    std::unique_ptr<Colour> juceColour;
 
 
 };

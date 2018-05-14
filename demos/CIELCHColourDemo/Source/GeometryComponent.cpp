@@ -198,7 +198,7 @@ void GeometryComponent::drawGeometries(Graphics& g, int startx, int starty)
 
             if (!imaginary)
             {
-                g.setColour(lchColour);
+                g.setColour(lchColour.getJuceColour());
             }
             else
             {
@@ -211,20 +211,20 @@ void GeometryComponent::drawGeometries(Graphics& g, int startx, int starty)
                     g.setColour(Colours::darkgrey.darker());
             }
             //setPixel for LCH geometry
-            g.setPixel(startx + border + (int)x, starty + border + (int)y);
+            g.drawRect(startx + border + (int)x, starty + border + (int)y, 1, 1);
 
-            CIELCHColour hsvColour;
+            Colour hsvColour;
             interpolate = (float)hsvSlider.getValue();
             switch (hsvChoice.getSelectedId())
             {
             case ColourPlane::BoverS:
-                hsvColour = CIELCHColour::fromHSV(interpolate, x / width, (height - y) / height,  1.0);
+                hsvColour = Colour::fromHSV(interpolate, x / width, (height - y) / height,  1.0);
                 break;
             case ColourPlane::SoverH:
-                hsvColour = CIELCHColour::fromHSV(x / width, (height - y) / height, interpolate, 1.0);
+                hsvColour = Colour::fromHSV(x / width, (height - y) / height, interpolate, 1.0);
                 break;
             case ColourPlane::BoverH:
-                hsvColour = CIELCHColour::fromHSV(x / width, interpolate, (height - y) / height,  1.0);
+                hsvColour = Colour::fromHSV(x / width, interpolate, (height - y) / height,  1.0);
                 break;
             default:
                 //should never happen
@@ -232,7 +232,7 @@ void GeometryComponent::drawGeometries(Graphics& g, int startx, int starty)
                 break;
             }
             g.setColour(hsvColour);
-            g.setPixel(startx2 + border + (int)x, starty + border + (int)y);
+            g.drawRect(startx2 + border + (int)x, starty + border + (int)y, 1, 1);
 
         }
     }

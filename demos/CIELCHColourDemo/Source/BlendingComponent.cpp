@@ -43,7 +43,8 @@ void BlendingComponent::paint(Graphics& g)
 {
     drawBlender(g, 105, 40, CIELCHColour(0xffff7e00), CIELCHColour(0xff00caff));
     drawBlender(g, 375, 40, CIELCHColour(0xffff008c), CIELCHColour(0xff00caff));
-    drawBlender(g, 645, 40, Colours::yellow, Colours::blue);
+    drawBlender(g, 645, 40, Colours::darkblue, Colours::white);
+    //drawBlender(g, 645, 40, Colours::yellow, Colours::blue);
 
     g.setFont(Font("Arial", 20, Font::plain));
     g.setColour(Colours::black);
@@ -57,9 +58,9 @@ void BlendingComponent::drawColourRect(Graphics& g, float x, float y, float size
 {
     bool imaginary;
 
-    g.setColour(c);
+    g.setColour(c.getJuceColour());
     g.fillRoundedRectangle(x, y, size, size, 3);
-    g.setColour(c.withCIELightness(c.getCIELightness() - 0.1f, imaginary));
+    g.setColour(c.withCIELightness(c.getCIELightness() - 0.1f, imaginary).getJuceColour());
     g.drawRoundedRectangle(x + 1, y + 1, size - 2, size - 2, 3, 2);
     g.setColour(Colours::white);
     g.drawRoundedRectangle(x, y, size, size, 3, 2);
@@ -85,8 +86,8 @@ void BlendingComponent::drawBlender(Graphics& g, float startx, float starty, con
 
     float sh, ss, sb;
     float eh, es, eb;
-    start.getHSB(sh, ss, sb);
-    end.getHSB(eh, es, eb);
+    start.getJuceColour().getHSB(sh, ss, sb);
+    end.getJuceColour().getHSB(eh, es, eb);
 
     float sL, sC, sH;
     float eL, eC, eH;
@@ -109,6 +110,7 @@ void BlendingComponent::drawBlender(Graphics& g, float startx, float starty, con
         c = juce::Colour::fromHSV(sh + x * deltah, ss + x * deltas, sb + x * deltab, 1.0);
         drawColourRect(g, startx + border + x * height, starty + border, squareHeight, c);
 
+        //hmmm.. why +1 for the sH? Is this really correct?
         c = c.fromCIELCH(sL + x * deltaL, sC + x * deltaC, 1.0f + sH + x * deltaH, 1.0f, imaginary);
         drawColourRect(g, startx + border + x * height, starty + border + height, squareHeight, c);
 
