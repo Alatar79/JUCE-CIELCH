@@ -51,7 +51,7 @@ public:
     {
         // This method is where you should put your application's initialisation code..
 
-        mainWindow = new MainWindow (getApplicationName());
+        mainWindow = std::make_unique<MainWindow>(getApplicationName());
    
     }
 
@@ -104,7 +104,7 @@ public:
             viewport->setSize(maxWidth, maxHeight);
             setContentOwned(viewport, true);
 
-            centreWithSize (maxWidth, maxHeight);
+            centreWithSize (bestWidth, bestHeight);
             setVisible (true);
 
             // Add OpenGL renderer to our main Window. 
@@ -139,7 +139,7 @@ public:
     };
 
 private:
-    ScopedPointer<MainWindow> mainWindow;
+    std::unique_ptr<MainWindow> mainWindow;
 };
 
 //==============================================================================

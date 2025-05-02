@@ -42,7 +42,7 @@ ColourDemoComponent::ColourDemoComponent()
     addAndMakeVisible(desaturationExample);
     addAndMakeVisible(geometryExample);
 
-    tooltip = new TooltipWindow();
+    tooltip = std::make_unique<TooltipWindow>();
     tooltip->setMillisecondsBeforeTipAppears(200);
     getLookAndFeel().setColour(TooltipWindow::backgroundColourId, Colours::lightgrey);
     getLookAndFeel().setColour(TooltipWindow::textColourId, Colours::black);

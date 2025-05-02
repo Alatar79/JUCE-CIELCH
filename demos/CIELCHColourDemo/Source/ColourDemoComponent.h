@@ -61,7 +61,7 @@ private:
     DesaturationComponent desaturationExample;
     GeometryComponent geometryExample;
 
-    ScopedPointer<TooltipWindow> tooltip;
+    std::unique_ptr<TooltipWindow> tooltip;
     
 
     //==============================================================================
