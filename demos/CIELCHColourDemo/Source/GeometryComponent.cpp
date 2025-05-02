@@ -85,10 +85,10 @@ void GeometryComponent::paint(Graphics& g)
     g.drawText(lchXAxis, lchSlider.getX() + 22, lchSlider.getY() - 20, 100, 15, Justification::centredLeft);
     g.drawText(hsvXAxis, hsvSlider.getX() + 22, hsvSlider.getY() - 20, 100, 15, Justification::centredLeft);
 
-    g.addTransform(AffineTransform::rotation(-float_Pi / 2, (float) lchSlider.getX() + 22, (float) lchSlider.getY() - 20));
+    g.addTransform(AffineTransform::rotation(-MathConstants<float>::pi / 2, (float) lchSlider.getX() + 22, (float) lchSlider.getY() - 20));
     g.drawText(lchYAxis, lchSlider.getX() + 25, lchSlider.getY() - 37, 100, 15, Justification::centredLeft);
-    g.addTransform(AffineTransform::rotation(float_Pi / 2, (float) lchSlider.getX() + 22, (float) lchSlider.getY() - 20));
-    g.addTransform(AffineTransform::rotation(-float_Pi / 2, (float) hsvSlider.getX() + 22, (float) hsvSlider.getY() - 20));
+    g.addTransform(AffineTransform::rotation(MathConstants<float>::pi / 2, (float) lchSlider.getX() + 22, (float) lchSlider.getY() - 20));
+    g.addTransform(AffineTransform::rotation(-MathConstants<float>::pi / 2, (float) hsvSlider.getX() + 22, (float) hsvSlider.getY() - 20));
     g.drawText(hsvYAxis, hsvSlider.getX() + 25, hsvSlider.getY() - 37, 100, 15, Justification::centredLeft);
 
 }
